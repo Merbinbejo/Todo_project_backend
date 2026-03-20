@@ -29,7 +29,7 @@ database_model.Base.metadata.create_all(bind=engine)
 
 
 def init_db():
-    db=session()
+    db=SessionLocal ()
 
     count=db.query(database_model.Product).count()
     if count==0:
@@ -40,7 +40,7 @@ def init_db():
 init_db()
 
 def get_db():
-    db=session()
+    db=SessionLocal ()
     try:
         yield db
     finally:
