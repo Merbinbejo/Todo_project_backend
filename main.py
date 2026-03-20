@@ -46,6 +46,11 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/")
+def root():
+    return {"message": "FastAPI app is running!"}
+
+
 @app.get("/products")
 def get_all_products(db:Session=Depends(get_db)):
     db_products=db.query(database_model.Product).all()
