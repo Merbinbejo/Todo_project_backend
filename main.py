@@ -1,6 +1,6 @@
 from fastapi import FastAPI,Depends,HTTPException
 from model import Products
-from database import session
+from database import SessionLocal
 import database_model
 from database import engine
 from sqlalchemy.orm import Session
